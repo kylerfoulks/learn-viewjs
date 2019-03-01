@@ -3,6 +3,7 @@ new Vue({
     data: {
       playerHealth: 100,
       monsterHealth: 100,
+      activeGame: false,
       log:[]
     },
     methods:{
@@ -33,9 +34,13 @@ new Vue({
             this.playerHealth = this.playerHealth - monsterDamage;
         },
         newGame: function(){
+            this.activeGame = true;
             this.playerHealth = 100;
             this.monsterHealth = 100;
             this.log = [];
+        },
+        giveUp: function(){
+            this.activeGame = false;
         }
     }
   });
